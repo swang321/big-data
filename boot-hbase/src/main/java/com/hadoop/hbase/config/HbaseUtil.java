@@ -26,8 +26,8 @@ public class HbaseUtil {
 
     public static void main(String[] args) throws IOException {
         init();
-//        createTable("student", new String[]{"score"});
-//        insertData("student", "whh", "score", "语文", "100");
+        createTable("student", new String[]{"score"});
+        insertData("student", "whh", "score", "语文", "100");
         getData("student", "whh", "score", "语文");
         close();
     }

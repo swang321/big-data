@@ -58,7 +58,13 @@ slaves文件是指定HDFS上有哪些DataNode节点。
                    <name>dfs.namenode.secondary.http-address</name>
                    <value>slave2:50090</value>
              </property>
+              <property>
+                    <name>dfs.permissions.enabled</name>
+                    <value>false</value>
+              </property>
         </configuration>
+        
+        
 
 ### yarn-site.xml
 
