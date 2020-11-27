@@ -77,30 +77,10 @@ version   # 查看集群版本
 
 
 
-#### 错误一:   
-
- Failed to locate the winutils binary in the hadoop binary path
-
-配置hadoop环境变量  并设置  winutils.exe环境
-
-#### 错误二  :
-
-Can not resolve promote.cache-dns.local, please check your network
-
-配置hosts文件   虚拟机 IP 对应的 hosename  配置
-
-192.168.126.128 master
-192.168.126.129 slave1
-192.168.126.130 slave2
-
-#### **启动顺序**
+**启动顺序**
 
 Hadoop及hbase集群**启动顺序 zookeepeer -> hadoop -> hbase**
 
 #### **停止顺序**
 
 Hadoop及hbase集群**关闭顺序 hbase -> hadoop -> zookeepeer**
-
-
-
-。。

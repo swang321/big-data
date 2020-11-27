@@ -1,11 +1,8 @@
 
 下载 hadoop tar 包 版本 hadoop-2.9.2.tar.gz
 
-系统环境变量添加
+系统环境变量添加  hadoop
 
-    export HADOOP_HOME=/usr/local/hadoop/hadoop-2.9.2
-    export PATH=$PATH:$HADOOP_HOME/bin
-    export PATH=$P	192.168.31.138	192.168.31.139
 
 配置ssh免密 使用root 用户需要互相授权   （多节点互相免密授权）
 
