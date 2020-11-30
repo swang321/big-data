@@ -36,3 +36,12 @@ hadoop 权限错误 Permission denied: user=root, access=WRITE, inode="/":hdfs:s
 下载对应的  hadoop.dll  winutils.exe  版本 放到 hadoop  bin 目录下面 并且在   C:\Windows\System32  放一份
 
  
+
+#### 错误五：
+
+[root@master bin]# ./hive
+
+Logging initialized using configuration in jar:file:/usr/local/hadoop/hive/apache-hive-2.3.7-bin/lib/hive-common-2.3.7.jar!/hive-log4j2.properties Async: true
+Exception in thread "main" java.lang.IllegalArgumentException: java.net.URISyntaxException: Relative path in absolute URI: ${system:java.io.tmpdir%7D/$%7Bhive.session.id%7D_resources
+
+system:java.io.tmpdir修改成对应的地址
