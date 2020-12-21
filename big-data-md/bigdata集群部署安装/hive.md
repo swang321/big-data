@@ -12,8 +12,6 @@ HADOOP_HOME=/usr/local/hadoop/hadoop-2.9.2
 export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即hive的conf目录地址
 ```
 
-
-
 hive-site.xml
 
 ```

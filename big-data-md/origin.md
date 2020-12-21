@@ -4,6 +4,11 @@
 
     Hadoop MapReduce、YARN、HDFS、HBase、Hive、Zookeeper、Spark、Storm、Flink、Kafka
 
+
+​    
+    Hadoop Hive Spark Storm Flink HBase  Zookeeper Flume  Scala
+    Kafka Sqoop Azkaban
+
 HDFS 分布式文件系统 
 MapReduce 分布式并行编程模型 
 YARN 资源管理和调度器 

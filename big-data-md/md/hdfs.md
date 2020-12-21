@@ -47,3 +47,6 @@ A1  A2 A3 三个快    A1放在 机架1上面    A2  A3放在机架2上面的不
 
 - 低延迟的数据访问
 - 小文件储存
+
+demo
+hdfs dfs -mkdir /input
