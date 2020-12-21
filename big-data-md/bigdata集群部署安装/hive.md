@@ -1,3 +1,18 @@
+### 添加环境变量：
+
+```
+export HIVE_HOME=/usr/local/hadoop/hive/apache-hive-2.3.7-bin
+export PATH=$HIVE_HOME/bin:$PATH
+```
+
+### 使得配置的环境变量立即生效：
+
+```
+# source /etc/profile
+```
+
+
+
 #### 配置文件重命名
 
 将hive-defaultxml.template重命名为hive-site.xml
@@ -12,7 +27,7 @@ HADOOP_HOME=/usr/local/hadoop/hadoop-2.9.2
 export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即hive的conf目录地址
 ```
 
-hive-site.xml
+### hive-site.xml
 
 ```
      <!-- 插入一下代码 -->
@@ -35,9 +50,14 @@ hive-site.xml
         <!-- 到此结束代码 -->
 ```
 
-修改 hive.log配置文件
+### 修改 hive.log配置文件
 
         hive.log.threshold=ALL
         hive.root.logger=WARN,DRFA
         hive.log.dir=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/logs
         hive.log.file=hive.log
+### 启动
+
+```
+hive
+```
