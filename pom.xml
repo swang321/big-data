@@ -19,7 +19,6 @@
         <module>boot-hbase</module>
         <module>hdfs</module>
         <module>mapreduce</module>
-
     </modules>
 
     <properties>

@@ -35,7 +35,7 @@ export HBASE_MANAGES_ZK=false
 <!-- 指定hbase在HDFS上存储的路径 -->
         <property>
                 <name>hbase.rootdir</name>
-                <value>hdfs://master:9000/hbase</value>
+                <value>hdfs://master:9000/hbase</value>  
         </property>
 <!-- 指定zk的地址，多个用“,”分割 -->
         <property>
@@ -77,10 +77,3 @@ version   # 查看集群版本
 
 
 
-**启动顺序**
-
-Hadoop及hbase集群**启动顺序 zookeepeer -> hadoop -> hbase**
-
-#### **停止顺序**
-
-Hadoop及hbase集群**关闭顺序 hbase -> hadoop -> zookeepeer**

@@ -29,3 +29,21 @@
 （4）SecondaryNameNode执行完（3）操作之后，会通过post方式将新的FsImage文件发送到NameNode节点上
 
 （5）NameNode将从SecondaryNameNode接收到的新的FsImage替换旧的FsImage文件，同时将edit.new替换EditLog文件，通过这个过程EditLog就变小了
+
+## Block 副本放置策略
+
+A1  A2 A3 三个快    A1放在 机架1上面    A2  A3放在机架2上面的不同服务上
+
+### HDFS优缺点
+
+**1. 优点**
+
+- 数据冗余，硬件容错
+- 处理流式的数据访问
+- 适合存储大文件
+- 可构建在廉价机器上
+
+**2. 缺点**
+
+- 低延迟的数据访问
+- 小文件储存
