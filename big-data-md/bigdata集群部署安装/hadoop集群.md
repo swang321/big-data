@@ -19,12 +19,12 @@ slaves文件是指定HDFS上有哪些DataNode节点。
 ### core-site.xml   fs.defaultFS参数配置的是HDFS的地址
 
     <configuration>
-
+    
         <property>
                 <name>fs.default.name</name>
                 <value>hdfs://master:9000</value>
         </property>
-
+    
         <property>
                 <name>fs.defaultFS</name>
                 <value>hdfs://master:9000</value>
@@ -34,7 +34,7 @@ slaves文件是指定HDFS上有哪些DataNode节点。
                 <name>hadoop.tmp.dir</name>
                 <value>/usr/local/hadoop/tmp</value>
         </property>
-
+    
         <property>
                 <name>dfs.namenode.name.dir</name>
                 <value>file://${hadoop.tmp.dir}/dfs/name</value>
@@ -43,7 +43,7 @@ slaves文件是指定HDFS上有哪些DataNode节点。
                 <name>dfs.datanode.data.dir</name>
                 <value>file://${hadoop.tmp.dir}/dfs/data</value>
         </property>
-
+    
     </configuration>
 
 
@@ -60,8 +60,9 @@ slaves文件是指定HDFS上有哪些DataNode节点。
                     <value>false</value>
               </property>
         </configuration>
-        
-        
+
+
+​        
 
 ### yarn-site.xml
 
@@ -84,7 +85,7 @@ slaves文件是指定HDFS上有哪些DataNode节点。
             <value>106800</value>
         </property>
     </configuration>
-    
+
 ### mapred-site.xml
 
     <configuration>
@@ -101,7 +102,7 @@ slaves文件是指定HDFS上有哪些DataNode节点。
                <value>master:19888</value>
            </property>
     </configuration>
-     
+
 在主节点 启动 start-all.sh  
 
 master                        slave1                     slave2

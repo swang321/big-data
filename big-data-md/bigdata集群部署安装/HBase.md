@@ -42,6 +42,10 @@ export HBASE_MANAGES_ZK=false
                 <name>hbase.zookeeper.quorum</name>
                 <value>master:2181,slave1:2181,slave2:2181</value>
         </property>
+         <property>
+            <name>hbase.unsafe.stream.capability.enforce</name>
+            <value>false</value>
+  		</property>
 </configuration>
 ```
 
@@ -70,10 +74,16 @@ stop-hbase.sh
 habse 相关 shell命令
 
 ```shell
+hbase shell   #打开 Hbase Shell：
 list   # 查看表
 status   #查看集群状态
 version   # 查看集群版本
 ```
 
-
+```
+#phoenix
+export PHOENIX_HOME=/usr/local/hadoop/hbase/apache-phoenix-5.0.0-HBase-2.0-bin
+export PHOENIX_CLASSPATH=$PHOENIX_HOME
+export PATH=$PATH:$PHOENIX_HOME/bin
+```
 

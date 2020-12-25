@@ -30,7 +30,7 @@ export ZOOKEEPER_HOME=/usr/local/hadoop/zk/apache-zookeeper-3.5.8-bin
 export PATH=$ZOOKEEPER_HOME/bin:$PATH
 ```
 
-zk 相关命令
+ zk 相关命令
 
 ```shell
 #启动ZK服务: 

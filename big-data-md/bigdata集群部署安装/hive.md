@@ -30,7 +30,7 @@ export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即
 ### hive-site.xml
 
 ```
-     <!-- 插入一下代码 -->
+    <!-- 插入一下代码 -->
     <property>
         <name>javax.jdo.option.ConnectionUserName</name>用户名（这4是新添加的，记住删除配置文件原有的哦！）
         <value>root</value>
@@ -41,12 +41,17 @@ export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即
     </property>
    <property>
         <name>javax.jdo.option.ConnectionURL</name>mysql
-        <value>jdbc:mysql://master:3306/hive</value>
+        <value>jdbc:mysql://master:3306/hive?createDatabaseIfNotExist=true</value>
     </property>
     <property>
         <name>javax.jdo.option.ConnectionDriverName</name>mysql驱动程序
         <value>com.mysql.jdbc.Driver</value>
     </property>
+
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+     </property>
         <!-- 到此结束代码 -->
 ```
 
@@ -56,6 +61,10 @@ export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即
         hive.root.logger=WARN,DRFA
         hive.log.dir=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/logs
         hive.log.file=hive.log
+### 初始化 hive
+
+在hive中bin目录下执行 schematool -dbType mysql -initSchema
+
 ### 启动
 
 ```
