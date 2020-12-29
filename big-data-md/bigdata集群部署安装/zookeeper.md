@@ -33,6 +33,7 @@ export PATH=$ZOOKEEPER_HOME/bin:$PATH
  zk 相关命令
 
 ```shell
+# 启动一定注意端口 以及防火墙
 #启动ZK服务: 
 zkServer.sh start
 #停止ZK服务: 

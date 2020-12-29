@@ -47,6 +47,8 @@ nohup sh storm supervisor &
 nohup sh storm ui &
 # 启动日志查看服务 logviewer 
 nohup sh storm logviewer &
+
+nohup sh storm nimbus & && nohup sh storm supervisor & && nohup sh storm ui &  && nohup sh storm logviewer &
 ```
 
 slave2 ：

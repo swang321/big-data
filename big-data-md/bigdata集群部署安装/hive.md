@@ -69,4 +69,7 @@ export HIVE_CONF_DIR=/usr/local/hadoop/hive/apache-hive-2.3.7-bin/conf    #  即
 
 ```
 hive
+
+启动单个节点的 regionserver
+hbase-daemon.sh start regionserver
 ```

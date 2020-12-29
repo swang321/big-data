@@ -42,10 +42,6 @@ export HBASE_MANAGES_ZK=false
                 <name>hbase.zookeeper.quorum</name>
                 <value>master:2181,slave1:2181,slave2:2181</value>
         </property>
-         <property>
-            <name>hbase.unsafe.stream.capability.enforce</name>
-            <value>false</value>
-  		</property>
 </configuration>
 ```
 
@@ -87,3 +83,15 @@ export PHOENIX_CLASSPATH=$PHOENIX_HOME
 export PATH=$PATH:$PHOENIX_HOME/bin
 ```
 
+
+
+sqlline.py master,slave1,slave2:2181
+
+
+
+```
+<property>
+  <name>phoenix.schema.isNamespaceMappingEnabled</name>
+  <value>true</value>
+</property>
+```

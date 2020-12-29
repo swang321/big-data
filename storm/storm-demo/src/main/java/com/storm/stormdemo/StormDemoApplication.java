@@ -1,14 +1,13 @@
-package com.hadoop.hbase;
+package com.storm.stormdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HbaseApplication {
+public class StormDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HbaseApplication.class, args);
+        SpringApplication.run(StormDemoApplication.class, args);
     }
 
 }
-
