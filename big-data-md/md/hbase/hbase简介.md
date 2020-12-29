@@ -3,13 +3,32 @@
 HBase 是一个构建在 Hadoop 文件系统之上的面向列的数据库管理系统。
 
 + 持复杂的事务，只支持行级事务，即单行数据的读写都是原子性的；
+
 + 由于是采用 HDFS 作为底层存储，所以和 HDFS 一样，支持结构化、半结构化和非结构化的存储；
+
 + 支持通过增加机器进行横向扩展；
+
 + 支持数据分片；
+
 + 支持 RegionServers 之间的自动故障转移；
+
 + 易于使用的 Java 客户端 API；
+
 + 支持 BlockCache 和布隆过滤器；
+
 + 过滤器支持谓词下推。
+
+  
+
+  ## 三、HBase Table
+
+  HBase 是一个面向 ` 列 ` 的数据库管理系统，这里更为确切的而说，HBase 是一个面向 ` 列族 ` 的数据库管理系统。表 schema 仅定义列族，表具有多个列族，每个列族可以包含任意数量的列，列由多个单元格（cell ）组成，单元格可以存储多个版本的数据，多个版本数据以时间戳进行区分。
+
+  下图为 HBase 中一张表的：
+
+  + RowKey 为行的唯一标识，所有行按照 RowKey 的字典序进行排序；
+  + 该表具有两个列族，分别是 personal 和 office;
+  + 其中列族 personal 拥有 name、city、phone 三个列，列族 office 拥有 tel、addres 两个列。
 
 <div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/HBase_table-iteblog.png"/> </div>
 

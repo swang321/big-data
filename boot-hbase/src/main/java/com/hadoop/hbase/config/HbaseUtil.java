@@ -25,11 +25,25 @@ public class HbaseUtil {
     public static Admin admin;
 
     public static void main(String[] args) throws IOException {
+
+//        // 定义流数据与HBase中数据的映射
+//        SimpleHBaseMapper mapper = new SimpleHBaseMapper()
+//                .withRowKeyField("word")
+//                .withColumnFields(new Fields("word","count"))
+//                .withColumnFamily("info");
         init();
-        createTable("student", new String[]{"score"});
-        insertData("student", "whh", "score", "语文", "100");
-        getData("student", "whh", "score", "语文");
+//        createTable("WordCount", new String[]{"info"});
+//        insertData("WordCount", "hbase", "info", "hbase", "6");
+        getData("WordCount", "hbase", "info", "hbase");
+        getData("WordCount", "Flink", "info", "hbase");
         close();
+
+
+//        init();
+//        createTable("student", new String[]{"score"});
+//        insertData("student", "whh", "score", "语文", "100");
+//        getData("student", "whh", "score", "语文");
+//        close();
     }
 
     /**

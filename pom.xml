@@ -19,6 +19,7 @@
         <module>boot-hbase</module>
         <module>hdfs</module>
         <module>mapreduce</module>
+        <module>storm/storm-hbase</module>
     </modules>
 
     <properties>
@@ -116,6 +117,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
