@@ -11,6 +11,8 @@ storm list
 storm kill ClusterWordCountApp -w 3
 
 storm jar storm-hdfs-0.0.1-SNAPSHOT.jar com.storm.stormhdfs.mainapp.DataToHdfsApp cluster
+storm jar storm-hbase-0.0.1-SNAPSHOT.jar com.storm.stormhbase.main.WordCountToHBaseApp cluster
+
 ```
 
 java.lang.NoSuchMethodError: org.apache.hadoop.security.authentication.util.KerberosUtil.hasKerberosTicket(Ljavax/security/auth/Subject;)Z
@@ -55,7 +57,3 @@ Hive
 ```
 
 
-
-
-
-## 

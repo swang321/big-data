@@ -1,4 +1,4 @@
-package com.storm.stormhbase.component;
+package com.storm.stormredis.controller;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;

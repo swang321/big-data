@@ -102,3 +102,43 @@ Task 是组成 Component 的代码单元。Topology 启动后，1 个 Component 
 + 在默认情况下，每个 Worker 进程默认启动一个 Executor 线程；
 + 在默认情况下，每个 Executor 默认启动一个 Task 线程；
 + Task 是组成 Component 的代码单元。
+
+### 1.5 Stream groupings（分组策略）
+
+<div align="center"> <img width="400px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/topology-tasks.png"/> </div>
+
+`spouts` 和 `bolts` 在集群上执行任务时，是由多个 Task 并行执行 (如上图，每一个圆圈代表一个 Task)。当一个 Tuple 需要从 Bolt A 发送给 Bolt B 执行的时候，程序如何知道应该发送给 Bolt B 的哪一个 Task 执行呢？
+
+这是由 Stream groupings 分组策略来决定的，Storm 中一共有如下 8 个内置的 Stream Grouping。当然你也可以通过实现 `CustomStreamGrouping` 接口来实现自定义 Stream 分组策略。
+
+1. **Shuffle grouping**
+
+   Tuples 随机的分发到每个 Bolt 的每个 Task 上，每个 Bolt 获取到等量的 Tuples。
+
+2. **Fields grouping** 
+
+   Streams 通过 grouping 指定的字段 (field) 来分组。假设通过 `user-id` 字段进行分区，那么具有相同 `user-id` 的 Tuples 就会发送到同一个 Task。
+
+3. **Partial Key grouping**
+
+   Streams 通过 grouping 中指定的字段 (field) 来分组，与 `Fields Grouping` 相似。但是对于两个下游的 Bolt 来说是负载均衡的，可以在输入数据不平均的情况下提供更好的优化。
+
+4. **All grouping** 
+
+   Streams 会被所有的 Bolt 的 Tasks 进行复制。由于存在数据重复处理，所以需要谨慎使用。
+
+5. **Global grouping**  
+
+   整个 Streams 会进入 Bolt 的其中一个 Task，通常会进入 id 最小的 Task。
+
+6. **None grouping**
+
+   当前 None grouping 和 Shuffle grouping 等价，都是进行随机分发。
+
+7. **Direct grouping**
+
+   Direct grouping 只能被用于 direct streams 。使用这种方式需要由 Tuple 的生产者直接指定由哪个 Task 进行处理。
+
+8. **Local or shuffle grouping** 
+
+   如果目标 Bolt 有 Tasks 和当前 Bolt 的 Tasks 处在同一个 Worker 进程中，那么则优先将 Tuple Shuffled 到处于同一个进程的目标 Bolt 的 Tasks 上，这样可以最大限度地减少网络传输。否则，就和普通的 `Shuffle Grouping` 行为一致。

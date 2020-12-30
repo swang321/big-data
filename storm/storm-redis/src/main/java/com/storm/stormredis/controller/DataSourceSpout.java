@@ -1,4 +1,4 @@
-package com.storm.stormhbase.component;
+package com.storm.stormredis.controller;
 
 import org.apache.storm.shade.org.apache.commons.lang.StringUtils;
 import org.apache.storm.spout.SpoutOutputCollector;
@@ -11,18 +11,19 @@ import org.apache.storm.utils.Utils;
 
 import java.util.*;
 
-
 /**
- * 产生词频样本的数据源
+ * @author whh
+ * @desc
+ * @date 2020/12/29 10:50
  */
 public class DataSourceSpout extends BaseRichSpout {
 
-    private List<String> list = Arrays.asList("Spark", "Hadoop", "HBase", "Storm", "Flink", "Hive");
+    private final List<String> list = Arrays.asList("Spark", "Hadoop", "HBase", "Storm", "Flink", "Hive");
 
     private SpoutOutputCollector spoutOutputCollector;
 
     @Override
-    public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
+    public void open(Map conf, TopologyContext context, SpoutOutputCollector spoutOutputCollector) {
         this.spoutOutputCollector = spoutOutputCollector;
     }
 
@@ -35,8 +36,8 @@ public class DataSourceSpout extends BaseRichSpout {
     }
 
     @Override
-    public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("line"));
+    public void declareOutputFields(OutputFieldsDeclarer declarer) {
+        declarer.declare(new Fields("line"));
     }
 
 
@@ -49,5 +50,4 @@ public class DataSourceSpout extends BaseRichSpout {
         int endIndex = random.nextInt(list.size()) % (list.size()) + 1;
         return StringUtils.join(list.toArray(), "\t", 0, endIndex);
     }
-
 }

@@ -2,32 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.storm</groupId>
-    <artifactId>storm-hbase</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>storm-hbase</name>
+    <artifactId>storm-redis</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <storm.version>2.0.0</storm.version>
+        <java.version>1.8</java.version>
+        <storm.version>1.2.2</storm.version>
     </properties>
 
-
     <dependencies>
+        <!--Storm整合HDFS依赖-->
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-redis</artifactId>
+            <version>${storm.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-core</artifactId>
-            <version>${storm.version}</version>
-
-            <!--provided是表明了dependency 由JDK或者容器提供，
-            例如Servlet AP和一些Java EE APIs。这个scope 只能作用在编译和测试时，同时没有传递性。-->
-            <scope>provided</scope>
-        </dependency>
-        <!--Storm整合HBase依赖-->
-        <dependency>
-            <groupId>org.apache.storm</groupId>
-            <artifactId>storm-hbase</artifactId>
             <version>${storm.version}</version>
         </dependency>
 
@@ -43,15 +39,17 @@
 
     <build>
         <plugins>
+
+            <!--使用java8编译-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
                 </configuration>
             </plugin>
+
             <!--使用shade进行打包-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -99,7 +97,10 @@
                     </execution>
                 </executions>
             </plugin>
+
+
         </plugins>
     </build>
+
 
 </project>
