@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: kafka-consumer
+
+  kafka:
+    bootstrap-servers: 192.168.126.128:9092,192.168.126.129:9092,192.168.126.130:9092
+    template:
+      default-topic: topic-user
+    consumer:
+      group-id: group-user
+

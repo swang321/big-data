@@ -26,7 +26,7 @@ kafka-server-start.sh -daemon /usr/local/hadoop/kafka_2.12-1.0.0/config/server.p
 # --replication-factor 2   复制两份
 # --partitions 1         创建1个分区
 # --topic whh          topic 名称
-kafka-topics.sh --create --zookeeper master:2181,slave1:2181,slave2:2181 --replication-factor 2 --partitions 1 --topic hello
+kafka-topics.sh --create --zookeeper master:2181,slave1:2181,slave2:2181 --replication-factor 1 --partitions 2 --topic kafka-test
 # 查看已经存在的topic
 kafka-topics.sh --list --zookeeper master:2181,slave1:2181,slave2:2181
 # 查看 topic 主题得 消息

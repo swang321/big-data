@@ -14,3 +14,4 @@
 
 +  **consumer.subscribe(Collection\<String> topics)**  ：指明需要订阅的主题的集合；
 +  **consumer.subscribe(Pattern pattern)**  ：使用正则来匹配需要订阅的集合。
+

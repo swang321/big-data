@@ -1,4 +1,4 @@
-package com.producer;
+package producer;
 
 import org.apache.kafka.clients.producer.*;
 
@@ -14,7 +14,7 @@ public class SimProducer {
 
     public static void main(String[] args) {
 
-        String topicName = "helloOne";
+        String topicName = "Hello-Kafka";
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.126.128:9092");
