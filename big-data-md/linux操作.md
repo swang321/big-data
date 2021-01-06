@@ -30,3 +30,16 @@ yum卸载
 
 ```
 
+最小化安装ip
+
+```shell
+cd /etc/sysconfig/network-scripts/
+vi ifcfg-eno*****
+# 找到ONBOOT=no，修改为ONBOOT=yes，然后保存退出
+service network restart
+ip addr
+yum provides ifconfig
+yum install net-tools
+ifconfig
+```
+

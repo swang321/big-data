@@ -3,6 +3,8 @@
 ```shell
 broker.id=1   # 机器 id节点
 log.dirs=/usr/local/hadoop/kafka_2.12-1.0.0/logs
+advertised.listeners=PLAINTEXT://ip:9092
+advertised.listeners=PLAINTEXT://ip:9092
 zookeeper.connect=master:2181,slave1:2181,slave2:2181
 ```
 
@@ -20,8 +22,8 @@ export PATH=$PATH:$KAFKA_HOME/bin
 kafka命令 
 
 ```shell
-#启动集群
-kafka-server-start.sh -daemon /usr/local/hadoop/kafka_2.12-1.0.0/config/server.properties &
+#启动集群  在每个节点上启动
+kafka-server-start.sh /usr/local/hadoop/kafka_2.12-1.0.0/config/server.properties &
 # 创建 topic 主题
 # --replication-factor 2   复制两份
 # --partitions 1         创建1个分区
