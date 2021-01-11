@@ -52,10 +52,10 @@ ifconfig
 192.168.157.130 slave2
 192.168.157.131 slave3
 
- vi /etc/python/cert-verification.cfg
+ vim /etc/python/cert-verification.cfg
  verify=disable
 
-/etc/ambari-agent/conf/ambari-agent.ini
+vim /etc/ambari-agent/conf/ambari-agent.ini
 [security] 
 force_https_protocol=PROTOCOL_TLSv1_2
 
