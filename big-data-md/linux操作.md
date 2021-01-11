@@ -43,3 +43,34 @@ yum install net-tools
 ifconfig
 ```
 
+
+
+```
+
+192.168.157.132 master
+192.168.157.129 slave1
+192.168.157.130 slave2
+192.168.157.131 slave3
+
+ vi /etc/python/cert-verification.cfg
+ verify=disable
+
+/etc/ambari-agent/conf/ambari-agent.ini
+[security] 
+force_https_protocol=PROTOCOL_TLSv1_2
+
+ambari-server stop
+
+/usr/lib/jvm/java-openjdk
+
+http://192.168.157.132/ambari/hdp/HDP/centos7/3.1.0.0-78/
+http://192.168.157.132/ambari/hdp/HDP-UTILS/centos7/1.1.0.22/
+
+
+
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.275.b01-0.el7_9.x86_64
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+```
+
