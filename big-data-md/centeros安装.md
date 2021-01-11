@@ -104,25 +104,14 @@ yum remove ambari-server  #（卸载使用）
 ambari.repo
 
 ```
-#VERSION_NUMBER=2.6.1.0-143
-[ambari-2.6.1.0]
-name=ambari Version - ambari-2.6.1.0
-baseurl=http://192.168.157.132/ambari/ambari-2.4.1.0/centos7/2.4.1.0-22
+#VERSION_NUMBER=2.7.3.0-139
+[ambari-2.7.3.0-139]
+name=ambari Version - ambari-2.7.3.0-139
+baseurl=http://192.168.157.132/ambari/ambari/centos7/2.7.3.0-139
 gpgcheck=1
-gpgkey=http://192.168.157.132/ambari/ambari-2.4.1.0/centos7/2.4.1.0-22/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+gpgkey=http://192.168.157.132/ambari/ambari/centos7/2.7.3.0-139/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
-```
-
-```
-yum install yum-plugin-priorities
-yum clean all
-yum makecache
-yum repolist
-yum install -y ambari-server
-
-ambari-server setup
-
 ```
 
 hdp.repo
@@ -147,6 +136,28 @@ gpgcheck=0
 gpgkey=http://192.168.157.132/ambari/HDP-UTILS/centos7/1.1.0.22/HDP-UTILS/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
+
+```
+
+hdp-gpl.repo
+
+```
+
+[HDP-GPL-3.1.0.0-78]
+name=Hortonworks Data Platform Version - HDP-GPL-3.1.0.0-78
+baseurl=http://192.168.157.132/ambari/HDP-GPL/centos7/3.1.0.0-78/
+gpgcheck=0
+gpgkey=http://192.168.157.132/ambari/HDP-GPL/centos7/3.1.0.0-78/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+```
+
+```
+yum install yum-plugin-priorities
+yum clean all
+yum makecache
+yum repolist
+yum install -y ambari-server
 ```
 
 修改配置文件
@@ -164,5 +175,17 @@ master
 slave1
 slave2
 slave3
+
+ambari-server setup
+ambari-server stop
+ambari-server start
+
+centos7：
+
+修改vim /etc/locale.conf
+LANG="en_US.UTF-8"
+LANGUAGE="en_US:en"
+
+yum update nss
 ```
 
