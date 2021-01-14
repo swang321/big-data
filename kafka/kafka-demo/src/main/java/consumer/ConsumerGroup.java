@@ -5,7 +5,8 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import java.time.Duration;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -18,7 +19,7 @@ public class ConsumerGroup {
 
     public static void main(String[] args) {
 
-        String topic = "topic-user";
+//        String topic = "access";
         String group = "group-user";
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.126.128:9092,192.168.126.129:9092,192.168.126.130:9092");
@@ -30,7 +31,12 @@ public class ConsumerGroup {
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
         // 订阅主题
-        consumer.subscribe(Collections.singletonList(topic));
+        List<String> list = new ArrayList<>();
+        list.add("access");
+        list.add("ugchead");
+        list.add("ugctail");
+        consumer.subscribe(list);
+
 
         try {
             while (true) {

@@ -14,13 +14,13 @@ public class SimProducer {
 
     public static void main(String[] args) {
 
-        String topicName = "Hello-Kafka";
+        String topicName = "whh";
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.126.128:9092");
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        Producer<String, String> producer = new KafkaProducer<String, String>(properties);
+        Producer<String, String> producer = new KafkaProducer<>(properties);
 
         sent(topicName, producer);
         sentOne(topicName, producer);

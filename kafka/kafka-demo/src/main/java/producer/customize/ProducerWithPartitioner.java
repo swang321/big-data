@@ -15,7 +15,7 @@ public class ProducerWithPartitioner {
 
         //  kafka-topics.sh --create --zookeeper master:2181,slave1:2181,slave2:2181 --replication-factor 1 --partitions 2 --topic kafka-test
 
-        String topicName = "kafka-test";
+        String topicName = "aura";
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "192.168.126.128:9092");

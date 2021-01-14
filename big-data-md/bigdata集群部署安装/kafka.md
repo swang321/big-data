@@ -28,11 +28,11 @@ kafka-server-start.sh /usr/local/hadoop/kafka_2.12-1.0.0/config/server.propertie
 # --replication-factor 2   复制两份
 # --partitions 1         创建1个分区
 # --topic whh          topic 名称
-kafka-topics.sh --create --zookeeper master:2181,slave1:2181,slave2:2181 --replication-factor 1 --partitions 2 --topic kafka-test
+kafka-topics.sh --create --zookeeper master:2181,slave1:2181,slave2:2181 --replication-factor 1 --partitions 2 --topic whh
 # 查看已经存在的topic
 kafka-topics.sh --list --zookeeper master:2181,slave1:2181,slave2:2181
 # 查看 topic 主题得 消息
-kafka-console-consumer.sh --bootstrap-server master:9092 --topic hello --from-beginning
+kafka-console-consumer.sh --bootstrap-server master:9092 --topic whh --from-beginning
 
 # 对应得 版本不一样 命令也不一样
 ```

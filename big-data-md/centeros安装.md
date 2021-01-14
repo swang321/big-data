@@ -189,3 +189,14 @@ LANGUAGE="en_US:en"
 yum update nss
 ```
 
+
+
+
+
+```
+
+export FLINK_HOME=/var/www/html/ambari/flink-1.12.0
+export PATH=$PATH:$FLINK_HOME/bin
+export HADOOP_CLASSPATH="/usr/hdp/3.1.0.0-78/hadoop"
+```
+
